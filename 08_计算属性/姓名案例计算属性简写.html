@@ -1,0 +1,41 @@
+<!--
+   功能：计算属性写姓名案例简写
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>demo</title>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.13/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        姓：<input type="text" v-model="fname"><br/>
+        名：<input type="text" v-model="lname"><br/>
+        全名：<span>{{fullname}}</span>
+
+    </div>
+
+ <script type="text/javascript">
+    
+    new Vue({
+        el:'#root',
+        data:{
+            fname:'王',
+            lname:'旭',
+        },
+        computed:{
+            //是计算属性
+
+            fullname(){
+                console.log(this) //此处的this是vm
+                return this.fname +'-'+this.lname
+            }
+          
+        }
+
+    })
+</script>
+</body>
+</html>
